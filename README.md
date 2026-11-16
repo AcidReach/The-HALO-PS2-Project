@@ -4,6 +4,34 @@
 
 The HALO PS2 Project aims to deliver Halo as a faithful, contemporary PlayStation 2 port—as if it had launched alongside the original Xbox release.
 
+## Screenshots
+
+Development captures showing work in progress.
+
+### Pelican flyover
+
+PCSX2 development capture, 12 November 2026.
+
+![Pelicans during the opening flyover](https://github.com/user-attachments/assets/2b652625-9826-4836-b2c0-dd005b1a0f6f)
+
+### A10 — The Pillar of Autumn
+
+PCSX2 development capture, 14 November 2026.
+
+![A10 interior with flashlight illumination](https://github.com/user-attachments/assets/6a185e58-1f5a-40c1-8b1d-aca54209531c)
+
+### Per-pixel flashlight — A10
+
+PCSX2 development capture, 16 November 2026. Flashlight off (left) and on (right), showing the terrain diffuse-lighting test. The performance target remains unmet.
+
+![A10 flashlight off and on](https://github.com/user-attachments/assets/0179e8ed-ab01-484c-8351-690f5922f71b)
+
+### Pelican landing
+
+PCSX2 development capture, 12 November 2026.
+
+![First-person view during the Pelican landing](https://github.com/user-attachments/assets/d5ea4b75-260e-44cf-b295-c4942b6a5aa2)
+
 ## Project goals
 
 - **Faithful gameplay:** retain the combat, encounters and interactions that make Halo feel like Halo.
@@ -43,34 +71,6 @@ Achievements so far include:
 These milestones establish parts of the port’s foundation. They do not yet constitute a complete playable campaign. Full animation, active enemy AI, complete effects coverage and end-to-end DVD streaming remain development goals.
 
 No release date is announced.
-
-## Screenshots
-
-Development captures showing work in progress.
-
-### Pelican flyover
-
-PCSX2 development capture, 12 November 2026.
-
-![Pelicans during the opening flyover](https://github.com/user-attachments/assets/2b652625-9826-4836-b2c0-dd005b1a0f6f)
-
-### A10 — The Pillar of Autumn
-
-PCSX2 development capture, 14 November 2026.
-
-![A10 interior with flashlight illumination](https://github.com/user-attachments/assets/6a185e58-1f5a-40c1-8b1d-aca54209531c)
-
-### Per-pixel flashlight — A10
-
-PCSX2 development capture, 16 November 2026. Flashlight off (left) and on (right), showing the terrain diffuse-lighting test. The performance target remains unmet.
-
-![A10 flashlight off and on](https://github.com/user-attachments/assets/0179e8ed-ab01-484c-8351-690f5922f71b)
-
-### Pelican landing
-
-PCSX2 development capture, 12 November 2026.
-
-![First-person view during the Pelican landing](https://github.com/user-attachments/assets/d5ea4b75-260e-44cf-b295-c4942b6a5aa2)
 
 ## About this repository
 
