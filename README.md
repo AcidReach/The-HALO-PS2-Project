@@ -48,13 +48,17 @@ No release date is announced.
 
 Development captures showing work in progress.
 
-### Terrain rendering
+### Pelican flyover
 
-![Halo terrain rendering](https://github.com/user-attachments/assets/cd078378-e9ae-419c-9aa1-bb89e1e6a888)
+PCSX2 development capture, 12 November 2026.
 
-### First-person presentation and scenery
+![Pelicans during the opening flyover](https://github.com/user-attachments/assets/2b652625-9826-4836-b2c0-dd005b1a0f6f)
 
-![First-person rifle and scenery](https://github.com/user-attachments/assets/653dc9de-3ad0-41b1-b0db-a1b1339b423d)
+### A10 — The Pillar of Autumn
+
+PCSX2 development capture, 14 November 2026.
+
+![A10 interior with flashlight illumination](https://github.com/user-attachments/assets/6a185e58-1f5a-40c1-8b1d-aca54209531c)
 
 ### Per-pixel flashlight — A10
 
@@ -62,23 +66,11 @@ PCSX2 development capture, 16 November 2026. Flashlight off (left) and on (right
 
 ![A10 flashlight off and on](https://github.com/user-attachments/assets/0179e8ed-ab01-484c-8351-690f5922f71b)
 
-### Pelican flyover
-
-PCSX2 development capture, 12 November 2026.
-
-![Pelicans during the opening flyover](https://github.com/user-attachments/assets/2b652625-9826-4836-b2c0-dd005b1a0f6f)
-
 ### Pelican landing
 
 PCSX2 development capture, 12 November 2026.
 
 ![First-person view during the Pelican landing](https://github.com/user-attachments/assets/d5ea4b75-260e-44cf-b295-c4942b6a5aa2)
-
-### A10 — The Pillar of Autumn
-
-PCSX2 development capture, 14 November 2026.
-
-![A10 interior with flashlight illumination](https://github.com/user-attachments/assets/6a185e58-1f5a-40c1-8b1d-aca54209531c)
 
 ## About this repository
 
