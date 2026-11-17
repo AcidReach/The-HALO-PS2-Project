@@ -92,6 +92,51 @@ This architecture combines implemented foundations with ongoing integration and 
 
 **The project remains in active development; no release date has been announced.**
 
+## How AI Is Used in This Project
+
+The HALO PS2 Project is a **human-architected engineering project developed in collaboration with agentic AI tools**.
+
+The project's overall technical vision, engineering direction and system architecture are conceived and overseen by its creator, who serves as **Project Lead and Systems Architect**.
+
+The majority of the project's core architectural concepts originate from human-led research, technical reasoning and proposed solutions to the unique challenges of PlayStation 2 hardware.
+
+AI acts as a collaborative engineering partner, helping investigate these concepts, assess their feasibility, explore alternative approaches and identify opportunities for refinement.
+
+Through an iterative design process, proposed architectures are researched, challenged, tested and collaboratively refined before their final implementation is agreed upon.
+
+### Roles and Responsibilities
+
+**Project Lead & Systems Architect (Human)**
+
+- Establishes the project's vision, technical objectives and engineering priorities.
+- Conceives and proposes the overarching system architectures, rendering techniques and optimisation strategies.
+- Defines hardware constraints, performance targets and expected behaviour.
+- Directs technical investigations and evaluates proposed solutions.
+- Oversees architectural development and makes final design and implementation decisions.
+
+**AI Engineering & Development Agents**
+
+- Research PS2 hardware capabilities and investigate the feasibility of proposed architectural concepts.
+- Evaluate implementation strategies, identify limitations and suggest refinements.
+- Collaborate in developing detailed technical specifications and implementation plans.
+- Translate agreed architectures into working code, tools and engine components.
+- Execute tests, analyse profiling data, diagnose problems and implement optimisations.
+- Maintain technical documentation and development records.
+
+### Development Philosophy
+
+**Human architectural vision. Collaborative engineering. AI-accelerated implementation.**
+
+The project follows a continuous cycle of architectural design, technical investigation, collaborative refinement, implementation and hardware validation.
+
+AI is not used simply to generate code, nor is it responsible for independently determining the project's direction. Instead, it provides the research, analytical and implementation capabilities needed to explore and realise ambitious human-conceived engineering ideas.
+
+All systems are subject to technical evaluation, performance measurement and testing, including execution on real PlayStation 2 hardware.
+
+This approach combines **human creativity, architectural oversight and engineering judgement with the analytical and development capabilities of modern agentic AI**, enabling complex, hardware-specific systems to be developed and refined at a pace that would otherwise be difficult for a small independent project.
+
+*And yes, this section was written by AI — with human input, refinement, and final validation.*
+
 ## About this repository
 
 This is the public companion repository for The HALO PS2 Project. It contains only this public README, with embedded project screenshots.
