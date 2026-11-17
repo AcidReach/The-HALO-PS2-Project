@@ -34,7 +34,7 @@ PCSX2 development capture, 12 November 2026.
   <a href="images/a10-scene-067.png"><img src="images/a10-scene-067.png" alt="A10 development screenshot" width="49%"></a>
 </p>
 
-### B30 — Early performance profiling
+### A10, B30 — Early performance profiling
 
 Diagnostic activity capture from early B30 development. The chart records frame intervals, simulation and object-render activity, texture preparation, VIF1 waits, and shared EE asset-arena utilisation. Timing scopes overlap and should not be interpreted as additive EE busy time. This is an early profiling snapshot, **not a representation of current or final performance**.
 
