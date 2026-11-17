@@ -56,21 +56,32 @@ Current development includes:
 
 ## Project status
 
-**In active development, with working rendering and Halo integration on real PS2 hardware.**
+**Active development — native PS2 rendering and early Halo gameplay integration are working, but the campaign is not yet playable end to end.** The following separates demonstrated functionality from work still in progress.
 
-Achievements so far include:
+### Working foundations
 
-- **An efficient VU1-based renderer:** a rendering foundation built around the PS2’s Vector Unit 1 and Graphics Synthesizer.
-- **GS pass recipes for Halo effects:** rendering techniques that integrate effects originally accomplished with Halo’s Xbox shaders, with further work toward full visual coverage and accuracy.
-- **A working per-pixel flashlight:** functional lighting, with optimization still needed to meet the performance target.
-- **Halo terrain and scenery rendering:** environments and placed objects rendered together, with terrain correctly hiding objects behind it.
-- **First-person presentation:** working hands and rifle rendering, including ready and idle presentation.
-- **Collision and movement:** working static scenery and enemy collision with sliding.
-- **Limited weapon interactions:** an experimental combat slice supporting actor damage and removal of defeated actors from rendering and collision.
+- **Native PS2 execution:** Halo-derived scenes and game systems are running in development builds on real PlayStation 2 hardware and in PCSX2.
+- **VU1/GS rendering:** a PS2-specific geometry and rendering path is operational, including terrain, scenery, depth-tested occlusion, first-person hands and weapon presentation.
+- **Asset preparation:** an offline content-cooking pipeline converts supported Halo scene and asset data into formats intended for the PS2 runtime.
+- **Scene visibility:** BSP-informed visibility, frustum culling and other geometry-reduction techniques are integrated into the rendering work.
+- **Gameplay integration:** movement and static collision are functioning in test scenes, with experimental enemy collision, weapon damage and actor removal.
+- **Flashlight proof of concept:** a per-pixel diffuse flashlight response has been demonstrated in development captures, although its performance and full material response remain under development.
 
-These milestones establish parts of the port’s foundation. They do not yet constitute a complete playable campaign. Full animation, active enemy AI, complete effects coverage and end-to-end DVD streaming remain development goals.
+### Current development priorities
 
-No release date is announced.
+- **Performance optimisation:** reduce CPU-side simulation, object processing, geometry submission and rendering overhead to approach a stable gameplay frame rate on real hardware.
+- **GS Recipe System:** catalogue Halo's Xbox shaders and materials, develop efficient GS-pass recipes, and provide PS2-native alternatives where direct reproduction is too expensive or impractical. Recipes must meet visual and performance requirements before acceptance.
+- **UI and menu reconstruction:** recreate Halo's interface, ring effects, transitions and materials using the PS2 rendering pipeline.
+- **lxGS lighting:** develop efficient per-pixel diffuse, normal-mapped and specular lighting, including flashlight and spotlight effects.
+- **aaGS antialiasing:** investigate practical GS-based approaches to reduce silhouette shimmer and edge crawling.
+- **Memory and streaming:** refine compact collision/scene data, texture residency, RAM allocation and loading from physical DVD.
+- **Frame orchestration:** consolidate loading, streaming and rendering work under a coordinated frame-management system.
+
+### Still to complete
+
+Full campaign progression, complete enemy AI and animation integration, comprehensive material and visual-effect coverage, robust audio integration, reliable level transitions and end-to-end DVD streaming all require further work and validation.
+
+**The project is not yet a complete playable port, and no release date has been announced.** Progress descriptions refer to development builds and experiments, not a claim that every feature is integrated or performance-ready.
 
 ## About this repository
 
