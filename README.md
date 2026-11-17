@@ -43,64 +43,83 @@ PCSX2 development capture, 12 November 2026.
 
 These are the project’s targets, not claims that every system is already complete.
 
-## Technical development
+## Technical Development
 
-Achieving these goals requires a custom engine and content pipeline built around PlayStation 2 hardware.
+Recreating Halo on the PlayStation 2 requires more than translating graphics calls. The engine is being designed around the console's distinctive strengths: its Emotion Engine, Vector Units, Graphics Synthesizer, limited memory and DVD drive. Each system has to preserve the original experience while making efficient use of that hardware.
 
-Current development includes:
+### Native PS2 Rendering Engine
 
-- **PS2-focused rendering:** geometry processing and rendering work distributed across the Emotion Engine, Vector Units and Graphics Synthesizer.
-- **GS Recipe System:** A PS2-native rendering framework that translates Halo's original Xbox shaders and material effects into optimised sequences of Graphics Synthesizer (GS) passes, known as *recipes*. Where direct recreation is impractical or too expensive, alternative PS2-native effects are designed to preserve the original visual appearance while respecting the console's hardware and performance limitations.
-- **Content preparation:** offline processing of meshes, textures, materials, scenes and animation data for PS2 runtime use.
-- **Visibility and memory management:** scene visibility, geometry culling and texture budgeting to use limited resources efficiently.
+The renderer is built specifically for the PS2 rather than attempting to reproduce the Xbox graphics pipeline directly. Geometry preparation, transformation, clipping and drawing are distributed across the Emotion Engine, VU1 and GS, with an emphasis on keeping the vector units productive and avoiding unnecessary CPU work or data transfers.
+
+The goal is to retain Halo's original environment and model geometry while making complex scenes practical on the PS2. This native rendering foundation is already operational in development builds, with performance optimisation continuing.
+
+### GS Recipe System
+
+Halo's Xbox shaders rely on capabilities that do not map directly to the PS2's fixed-function Graphics Synthesizer. The **GS Recipe System** approaches each shader or material as a sequence of carefully chosen GS rendering passes—a *recipe*—that reproduces its visual behaviour.
+
+Recipes can combine texture sampling, blending, depth tests and framebuffer operations. Where a direct recreation would be impractical or too expensive, the system explores a cheaper PS2-native representation designed to preserve the same visual impression. Every recipe must satisfy both visual and performance requirements before acceptance. The system is also being used to plan the recreation of Halo's distinctive UI and ring effects.
 
 ### Texture Fidelity and Optimisation
 
-The objective is to **preserve Halo's original full-resolution textures wherever practical**, maximising fidelity to the original rendered frame rather than reducing texture quality uniformly to fit the PS2.
+The objective is to **preserve Halo's original full-resolution textures wherever practical**, rather than applying blanket reductions in resolution or colour depth.
 
-Each texture is assessed individually during content preparation to determine the most appropriate conversion and storage format. Decisions consider colour depth, palette or compression options, measured reconstruction error using **root mean square error (RMSE)**, and whether a reduction in resolution is actually necessary.
+Each texture is assessed individually for its most suitable PS2 conversion format, palette or colour-depth representation, reconstruction quality and actual resolution needs. **Root mean square error (RMSE)** provides a measurable indication of conversion error, alongside inspection of how the texture appears in the rendered scene.
 
-Texture choices also account for their visual importance, how they appear in-game, and their impact on limited GS texture memory and streaming bandwidth. Where a lower-cost representation produces an acceptable visual result, it can free resources for textures that benefit more from retaining their original detail.
+This allows memory and streaming bandwidth to be saved where the visual impact is small, leaving more resources available for textures where the original detail matters most. The guiding principle is measured, per-texture optimisation to maximise fidelity to the Xbox image.
 
-The guiding principle is **measured, per-texture optimisation instead of blanket downscaling**, with the aim of reproducing the original Xbox image as faithfully as PS2 hardware permits.
+### lxGS — Advanced Lighting
 
-## Project status
+**lxGS** explores how the PS2's GS and vector units can cooperate to produce lighting effects beyond conventional fixed-function expectations. The work includes per-pixel diffuse lighting, normal-map response, spotlights and flashlight illumination, with specular and material-dependent effects also under development.
 
-**Active development — native PS2 rendering and early Halo gameplay integration are working, but the campaign is not yet playable end to end.** The following separates demonstrated functionality from work still in progress.
+Rather than treating every lighting feature as another full scene render, the architecture investigates buffer reuse, lower-resolution lighting data and efficient multipass operations. A per-pixel diffuse flashlight has been demonstrated; extending its visual response while meeting performance targets remains active work.
 
-### Working foundations
+### aaGS — Antialiasing
 
-- **Native PS2 execution:** Halo-derived scenes and game systems are running in development builds on real PlayStation 2 hardware and in PCSX2.
-- **VU1/GS rendering:** a PS2-specific geometry and rendering path is operational, including terrain, scenery, depth-tested occlusion, first-person hands and weapon presentation.
-- **Asset preparation:** an offline content-cooking pipeline converts supported Halo scene and asset data into formats intended for the PS2 runtime.
-- **Scene visibility:** BSP-informed visibility, frustum culling and other geometry-reduction techniques are integrated into the rendering work.
-- **Gameplay integration:** movement and static collision are functioning in test scenes, with experimental enemy collision, weapon damage and actor removal.
-- **Flashlight proof of concept:** a per-pixel diffuse flashlight response has been demonstrated in development captures, although its performance and full material response remain under development.
+**aaGS** is a family of PS2-oriented techniques intended to reduce jagged silhouettes, edge shimmer and crawling, particularly around the Halo menu's large, slowly moving ring.
 
-### Multi-layer streaming and prediction
+The research combines subpixel sampling, selective edge treatment and GS blending operations, aiming to improve image stability without the cost of applying expensive processing across every pixel. The priority is a visibly smoother result at a sustainable frame cost, rather than antialiasing for its own sake.
 
-A major part of the engine is a sophisticated, multi-layer streaming and prediction architecture designed around the PS2's limited memory and DVD bandwidth. Rather than relying on a single level-loading step, the system is being developed to coordinate several complementary layers:
+### Visibility and Geometry Efficiency
 
-- **Scene and BSP streaming:** prepare upcoming environment sections while retaining the data required by the active area.
-- **Predictive prefetch:** use player movement, scene connectivity and likely transitions to anticipate which data may be needed next, instead of waiting for a visible loading event.
-- **Asset-level residency:** manage textures, geometry and other resources independently so that high-priority content can remain available while less urgent data is loaded or evicted.
-- **Memory-aware scheduling:** coordinate RAM budgets, decompression, asset preparation and transfers to reduce contention with gameplay and rendering.
-- **Frame-coordinated delivery:** schedule loading and residency changes alongside simulation and rendering, with the aim of avoiding disruptive frame-time spikes.
-- **Hardware-grounded virtual DVD testing:** develop and test on real PS2 hardware using a virtual DVD reading system that emulates disc seeks and read-data retrieval against a properly authored DVD ISO. Data placement within the image is organised to support efficient streaming, allowing the loading pipeline to be assessed under disc-like access patterns before physical DVD validation.
+Halo's environments can contain far more geometry than needs to be drawn from any one viewpoint. The engine retains useful BSP spatial information and combines it with visibility filtering, frustum testing and other culling stages to reduce work before geometry reaches VU1.
 
-This architecture combines implemented foundations with ongoing integration and optimisation work. Its goal is seamless progression through Halo's environments from physical DVD, without requiring an internal hard drive.
+The objective is not to simplify Halo's original world, but to **avoid processing and drawing geometry that cannot contribute to the frame**. Work also focuses on efficient geometry batching, clipping and object processing so that the EE and vector units spend their time on visible results.
 
-### Current development priorities
+### Multi-layer Streaming and Prediction
 
-- **Performance optimisation:** reduce CPU-side simulation, object processing, geometry submission and rendering overhead to approach a stable gameplay frame rate on real hardware.
-- **GS Recipe System:** catalogue Halo's Xbox shaders and materials, develop efficient GS-pass recipes, and provide PS2-native alternatives where direct reproduction is too expensive or impractical. Recipes must meet visual and performance requirements before acceptance.
-- **UI and menu reconstruction:** recreate Halo's interface, ring effects, transitions and materials using the PS2 rendering pipeline.
-- **lxGS lighting:** develop efficient per-pixel diffuse, normal-mapped and specular lighting, including flashlight and spotlight effects.
-- **aaGS antialiasing:** investigate practical GS-based approaches to reduce silhouette shimmer and edge crawling.
-- **Multi-layer streaming and prediction:** develop and refine a coordinated streaming system that anticipates upcoming scene and asset requirements, balances memory residency and prepares data before it is needed.
-- **Frame orchestration:** consolidate loading, streaming and rendering work under a coordinated frame-management system.
+A central engineering challenge is moving Halo's environments and assets through the PS2's limited memory without interrupting play. The engine is being developed around a **multi-layer streaming and prediction system**, rather than loading every resource for an entire level at once.
 
-**The project remains in active development; no release date has been announced.**
+Its complementary layers coordinate:
+
+- **Environment residency:** retain the active scene and prepare upcoming BSP or environment data as the player moves through connected spaces.
+- **Predictive prefetch:** anticipate likely transitions from player movement and scene connectivity so required data can be requested before it becomes visible.
+- **Independent asset streaming:** manage geometry, textures and other resources according to their priority, visibility and memory cost.
+- **Memory-aware preparation:** schedule loading, decompression and residency changes around the available RAM and the demands of gameplay.
+- **Frame-aware delivery:** coordinate streaming activity with rendering and simulation to minimise disruptive frame-time spikes.
+
+The architecture combines working foundations with ongoing integration and tuning. Its long-term objective is seamless progression through the complete game from a physical DVD, without an internal hard drive.
+
+### Virtual DVD System and Real Hardware Validation
+
+Development and testing use **real PlayStation 2 hardware**, supported by a virtual DVD reading system that emulates disc seeks and read-data retrieval against a properly authored DVD ISO image.
+
+Assets are positioned within that ISO with streaming performance in mind. This makes disc layout, seek behaviour and data access patterns part of the engineering process, rather than treating storage as an unlimited, instantaneous resource.
+
+The virtual system helps test and refine loading behaviour under disc-like access conditions; final physical DVD performance still requires direct validation.
+
+### Frame Director and Performance Engineering
+
+The **Frame Director** is intended to coordinate simulation, rendering, effects and streaming as parts of a single frame workload, reducing dependence on separate manually controlled loops.
+
+Performance work is guided by profiling on actual PS2 hardware as well as emulator diagnostics. CPU-side simulation, object handling, VU1 submission, rendering passes, memory transfers and streaming are investigated as a connected system. The target is a stable, responsive game—not an isolated benchmark or a visual effect that is too expensive to use.
+
+## Project Status
+
+**Active development.** Native PS2 execution, terrain and scenery rendering, first-person presentation, visibility processing, asset cooking and initial gameplay interactions have been demonstrated in development builds. Per-pixel flashlight lighting has also been shown, with further optimisation required.
+
+Current work concentrates on renderer and simulation performance, shader and UI recreation, lighting, antialiasing, memory management and predictive streaming. These are evolving engineering systems; individual prototypes or successful tests do not imply that every feature is fully integrated or performance-ready.
+
+**No release date has been announced.**
 
 ## How AI Is Used in This Project
 
