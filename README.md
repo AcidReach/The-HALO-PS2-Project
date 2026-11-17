@@ -132,7 +132,7 @@ Performance work is guided by profiling on actual PS2 hardware as well as emulat
 
 ### Checkpoints and Memory Card Saving
 
-The in-game checkpoint system is working, recording progress during gameplay without interrupting or disturbing the experience. The in-game menu's **Save** option is also functional, saving progress directly to a PlayStation 2 memory card.
+The in-game checkpoint system is working, with a current delay of **one frame** when a checkpoint is recorded. The checkpoint operation may be tuned further to reduce its impact on gameplay. The in-game menu's **Save** option is also functional, saving progress directly to a PlayStation 2 memory card.
 
 ## Project Status
 
