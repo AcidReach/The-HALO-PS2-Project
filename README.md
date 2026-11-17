@@ -54,6 +54,16 @@ Current development includes:
 - **Content preparation:** offline processing of meshes, textures, materials, scenes and animation data for PS2 runtime use.
 - **Visibility and memory management:** scene visibility, geometry culling and texture budgeting to use limited resources efficiently.
 
+### Texture Fidelity and Optimisation
+
+The objective is to **preserve Halo's original full-resolution textures wherever practical**, maximising fidelity to the original rendered frame rather than reducing texture quality uniformly to fit the PS2.
+
+Each texture is assessed individually during content preparation to determine the most appropriate conversion and storage format. Decisions consider colour depth, palette or compression options, measured reconstruction error using **root mean square error (RMSE)**, and whether a reduction in resolution is actually necessary.
+
+Texture choices also account for their visual importance, how they appear in-game, and their impact on limited GS texture memory and streaming bandwidth. Where a lower-cost representation produces an acceptable visual result, it can free resources for textures that benefit more from retaining their original detail.
+
+The guiding principle is **measured, per-texture optimisation instead of blanket downscaling**, with the aim of reproducing the original Xbox image as faithfully as PS2 hardware permits.
+
 ## Project status
 
 **Active development — native PS2 rendering and early Halo gameplay integration are working, but the campaign is not yet playable end to end.** The following separates demonstrated functionality from work still in progress.
