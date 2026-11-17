@@ -130,6 +130,10 @@ The **Frame Director** is intended to coordinate simulation, rendering, effects 
 
 Performance work is guided by profiling on actual PS2 hardware as well as emulator diagnostics. CPU-side simulation, object handling, VU1 submission, rendering passes, memory transfers and streaming are investigated as a connected system. The target is a stable, responsive game—not an isolated benchmark or a visual effect that is too expensive to use.
 
+### Checkpoints and Memory Card Saving
+
+The in-game checkpoint system is working, recording progress during gameplay without interrupting or disturbing the experience. The in-game menu's **Save** option is also functional, saving progress directly to a PlayStation 2 memory card.
+
 ## Project Status
 
 **Active development.** Native PS2 execution, terrain and scenery rendering, first-person presentation, visibility processing, asset cooking and initial gameplay interactions have been demonstrated in development builds. Per-pixel flashlight lighting has also been shown, with further optimisation required.
