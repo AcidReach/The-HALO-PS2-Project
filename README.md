@@ -1,8 +1,8 @@
 # The HALO PS2 Project
 
-**Bringing Halo to PlayStation 2 as a faithful port, retaining everything that makes it Halo.**
+**Fidelity over compromise.**
 
-The HALO PS2 Project aims to deliver Halo as a faithful, contemporary PlayStation 2 port—as if it had launched alongside the original Xbox release.
+The HALO PS2 Project aims to recreate the original Xbox Halo experience on PlayStation 2 as faithfully as possible—not merely to make the game run, but to preserve what makes it Halo. Through a highly optimised, purpose-built PS2 engine, the ambition is to deliver visual quality and gameplay fidelity beyond conventional expectations of the hardware, as though Halo had been developed for the console alongside its original Xbox release.
 
 ## Screenshots
 
