@@ -88,7 +88,9 @@ Rather than treating every lighting feature as another full scene render, the ar
 
 **aaGS** is a family of PS2-oriented techniques intended to reduce jagged silhouettes, edge shimmer and crawling, particularly around the Halo menu's large, slowly moving ring.
 
-The research combines subpixel sampling, selective edge treatment and GS blending operations, aiming to improve image stability without the cost of applying expensive processing across every pixel. The priority is a visibly smoother result at a sustainable frame cost, rather than antialiasing for its own sake.
+Rather than applying a conventional **full-screen antialiasing filter**, the experimental aaGS approach is **geometry-edge-based**. Geometry-derived edge information is used to identify visible polygon boundaries and silhouettes, so subpixel sampling and GS blending can be concentrated on the regions where jagged edges and crawling occur. **The rest of the image is left untouched, preserving sharp texture detail** instead of softening the entire screen.
+
+By restricting antialiasing work to the edges that actually need it, the approach aims to reduce unnecessary rendering cost while improving image stability. Visual quality and frame-time performance both have to meet the project's acceptance targets.
 
 An early experimental antialiasing solution has produced encouraging static comparisons. **The difference is much more pronounced in motion**, where the improvement in edge stability and reduced shimmering is harder to convey in screenshots. This remains experimental work, not a final integrated or performance-accepted solution.
 
