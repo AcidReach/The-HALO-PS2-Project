@@ -6,7 +6,7 @@ The HALO PS2 Project aims to recreate the original Xbox Halo experience on PlayS
 
 ## Screenshots
 
-**These screenshots are from earlier development builds and do not represent the current state of the game. Updated screenshots will be published soon.**
+**These screenshots are from earlier development builds and do not reflect the current state of the project. Updated screenshots will follow, with direct captures from real PlayStation 2 hardware planned once visual fidelity and performance have progressed sufficiently to showcase the experience we're aiming to deliver.**
 
 ### Pelican flyover
 
