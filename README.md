@@ -90,6 +90,8 @@ Rather than treating every lighting feature as another full scene render, the ar
 
 The research combines subpixel sampling, selective edge treatment and GS blending operations, aiming to improve image stability without the cost of applying expensive processing across every pixel. The priority is a visibly smoother result at a sustainable frame cost, rather than antialiasing for its own sake.
 
+An early experimental antialiasing solution has produced encouraging static comparisons. **The difference is much more pronounced in motion**, where the improvement in edge stability and reduced shimmering is harder to convey in screenshots. This remains experimental work, not a final integrated or performance-accepted solution.
+
 ### Visibility and Geometry Efficiency
 
 Halo's environments can contain far more geometry than needs to be drawn from any one viewpoint. The engine retains useful BSP spatial information and combines it with visibility filtering, frustum testing and other culling stages to reduce work before geometry reaches VU1.
