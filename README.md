@@ -26,6 +26,10 @@ PCSX2 development capture, 12 November 2026.
 
 ![First-person view during the Pelican landing](https://github.com/user-attachments/assets/d5ea4b75-260e-44cf-b295-c4942b6a5aa2)
 
+### B30 — Early performance profiling
+
+PCSX2 diagnostic activity capture from early B30 development, 12 November 2026. The chart records frame intervals, simulation and object-render activity, texture preparation, VIF1 waits, and shared EE asset-arena utilisation. Timing scopes overlap and should not be interpreted as additive EE busy time. This is an early profiling snapshot, **not a representation of current or final performance**.
+
 ## Project goals
 
 - **Faithful gameplay:** retain the combat, encounters and interactions that make Halo feel like Halo.
