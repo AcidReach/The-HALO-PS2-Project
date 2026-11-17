@@ -26,9 +26,22 @@ PCSX2 development capture, 12 November 2026.
 
 ![First-person view during the Pelican landing](https://github.com/user-attachments/assets/d5ea4b75-260e-44cf-b295-c4942b6a5aa2)
 
+<p align="center">
+  <a href="images/a10-native-045.png"><img src="images/a10-native-045.png" alt="A10 development screenshot" width="49%"></a>
+  <a href="images/a10-native-148.png"><img src="images/a10-native-148.png" alt="A10 development screenshot" width="49%"></a>
+  <a href="images/a10-scene-034.png"><img src="images/a10-scene-034.png" alt="A10 development screenshot" width="49%"></a>
+  <a href="images/a10-scene-063.png"><img src="images/a10-scene-063.png" alt="A10 development screenshot" width="49%"></a>
+  <a href="images/a10-scene-067.png"><img src="images/a10-scene-067.png" alt="A10 development screenshot" width="49%"></a>
+</p>
+
 ### B30 — Early performance profiling
 
 PCSX2 diagnostic activity capture from early B30 development, 12 November 2026. The chart records frame intervals, simulation and object-render activity, texture preparation, VIF1 waits, and shared EE asset-arena utilisation. Timing scopes overlap and should not be interpreted as additive EE busy time. This is an early profiling snapshot, **not a representation of current or final performance**.
+
+<p align="center">
+  <a href="images/b30-diagnostic-activity.png"><img src="images/b30-diagnostic-activity.png" alt="B30 early diagnostic activity capture" width="49%"></a>
+  <a href="images/processor-timeline-game.png"><img src="images/processor-timeline-game.png" alt="Physical PS2 render-call timeline" width="49%"></a>
+</p>
 
 ## Project goals
 
@@ -166,7 +179,7 @@ This approach combines **human creativity, architectural oversight and engineeri
 
 ## About this repository
 
-This is the public companion repository for The HALO PS2 Project. It contains only this public README, with embedded project screenshots.
+This is the public companion repository for The HALO PS2 Project. It contains the public README and project screenshots.
 
 The development repository remains private. Source code, game assets, builds and confidential development documents are not published here.
 
