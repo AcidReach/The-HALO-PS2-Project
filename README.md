@@ -6,7 +6,7 @@ The HALO PS2 Project aims to deliver Halo as a faithful, contemporary PlayStatio
 
 ## Screenshots
 
-Development captures showing work in progress.
+**These screenshots are from earlier development builds and do not represent the current state of the game. Updated screenshots will be published soon.**
 
 ### Pelican flyover
 
@@ -67,6 +67,18 @@ Current development includes:
 - **Gameplay integration:** movement and static collision are functioning in test scenes, with experimental enemy collision, weapon damage and actor removal.
 - **Flashlight proof of concept:** a per-pixel diffuse flashlight response has been demonstrated in development captures, although its performance and full material response remain under development.
 
+### Multi-layer streaming and prediction
+
+A major part of the engine is a sophisticated, multi-layer streaming and prediction architecture designed around the PS2's limited memory and DVD bandwidth. Rather than relying on a single level-loading step, the system is being developed to coordinate several complementary layers:
+
+- **Scene and BSP streaming:** prepare upcoming environment sections while retaining the data required by the active area.
+- **Predictive prefetch:** use player movement, scene connectivity and likely transitions to anticipate which data may be needed next, instead of waiting for a visible loading event.
+- **Asset-level residency:** manage textures, geometry and other resources independently so that high-priority content can remain available while less urgent data is loaded or evicted.
+- **Memory-aware scheduling:** coordinate RAM budgets, decompression, asset preparation and transfers to reduce contention with gameplay and rendering.
+- **Frame-coordinated delivery:** schedule loading and residency changes alongside simulation and rendering, with the aim of avoiding disruptive frame-time spikes.
+
+This architecture combines implemented foundations with ongoing integration and optimisation work. Its goal is seamless progression through Halo's environments from physical DVD, without requiring an internal hard drive.
+
 ### Current development priorities
 
 - **Performance optimisation:** reduce CPU-side simulation, object processing, geometry submission and rendering overhead to approach a stable gameplay frame rate on real hardware.
@@ -74,14 +86,10 @@ Current development includes:
 - **UI and menu reconstruction:** recreate Halo's interface, ring effects, transitions and materials using the PS2 rendering pipeline.
 - **lxGS lighting:** develop efficient per-pixel diffuse, normal-mapped and specular lighting, including flashlight and spotlight effects.
 - **aaGS antialiasing:** investigate practical GS-based approaches to reduce silhouette shimmer and edge crawling.
-- **Memory and streaming:** refine compact collision/scene data, texture residency, RAM allocation and loading from physical DVD.
+- **Multi-layer streaming and prediction:** develop and refine a coordinated streaming system that anticipates upcoming scene and asset requirements, balances memory residency and prepares data before it is needed.
 - **Frame orchestration:** consolidate loading, streaming and rendering work under a coordinated frame-management system.
 
-### Still to complete
-
-Full campaign progression, complete enemy AI and animation integration, comprehensive material and visual-effect coverage, robust audio integration, reliable level transitions and end-to-end DVD streaming all require further work and validation.
-
-**The project is not yet a complete playable port, and no release date has been announced.** Progress descriptions refer to development builds and experiments, not a claim that every feature is integrated or performance-ready.
+**The project remains in active development; no release date has been announced.**
 
 ## About this repository
 
