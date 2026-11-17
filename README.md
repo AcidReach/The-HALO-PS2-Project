@@ -14,7 +14,7 @@ PCSX2 development capture, 12 November 2026.
 
 ![Pelicans during the opening flyover](https://github.com/user-attachments/assets/2b652625-9826-4836-b2c0-dd005b1a0f6f)
 
-### A10 - Per-pixel flashlight
+### A10 - Experimental per-pixel flashlight
 
 PCSX2 development capture, 16 November 2026. Flashlight off (left) and on (right), showing the terrain diffuse-lighting test. The performance target remains unmet.
 
