@@ -36,7 +36,7 @@ PCSX2 development capture, 12 November 2026.
 
 ### B30 — Early performance profiling
 
-Diagnostic activity capture from early B30 development, 12 November 2026. The chart records frame intervals, simulation and object-render activity, texture preparation, VIF1 waits, and shared EE asset-arena utilisation. Timing scopes overlap and should not be interpreted as additive EE busy time. This is an early profiling snapshot, **not a representation of current or final performance**.
+Diagnostic activity capture from early B30 development. The chart records frame intervals, simulation and object-render activity, texture preparation, VIF1 waits, and shared EE asset-arena utilisation. Timing scopes overlap and should not be interpreted as additive EE busy time. This is an early profiling snapshot, **not a representation of current or final performance**.
 
 <p align="center">
   <a href="images/b30-diagnostic-activity.png"><img src="images/b30-diagnostic-activity.png" alt="B30 early diagnostic activity capture" width="49%"></a>
