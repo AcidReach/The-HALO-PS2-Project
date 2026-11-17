@@ -76,6 +76,7 @@ A major part of the engine is a sophisticated, multi-layer streaming and predict
 - **Asset-level residency:** manage textures, geometry and other resources independently so that high-priority content can remain available while less urgent data is loaded or evicted.
 - **Memory-aware scheduling:** coordinate RAM budgets, decompression, asset preparation and transfers to reduce contention with gameplay and rendering.
 - **Frame-coordinated delivery:** schedule loading and residency changes alongside simulation and rendering, with the aim of avoiding disruptive frame-time spikes.
+- **Hardware-grounded virtual DVD testing:** develop and test on real PS2 hardware using a virtual DVD reading system that emulates disc seeks and read-data retrieval against a properly authored DVD ISO. Data placement within the image is organised to support efficient streaming, allowing the loading pipeline to be assessed under disc-like access patterns before physical DVD validation.
 
 This architecture combines implemented foundations with ongoing integration and optimisation work. Its goal is seamless progression through Halo's environments from physical DVD, without requiring an internal hard drive.
 
