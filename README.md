@@ -50,7 +50,7 @@ Achieving these goals requires a custom engine and content pipeline built around
 Current development includes:
 
 - **PS2-focused rendering:** geometry processing and rendering work distributed across the Emotion Engine, Vector Units and Graphics Synthesizer.
-- **Lighting and effects:** developing Graphics Synthesizer pass recipes to represent effects originally accomplished with Halo’s Xbox shaders.
+- **GS recipes for Xbox shader effects:** using Graphics Synthesizer (GS) rendering “recipes”—combinations of rendering passes—to reproduce effects originally produced by Halo’s Xbox shaders as accurately as possible on PS2.
 - **Content preparation:** offline processing of meshes, textures, materials, scenes and animation data for PS2 runtime use.
 - **Visibility and memory management:** scene visibility, geometry culling and texture budgeting to use limited resources efficiently.
 
@@ -77,6 +77,10 @@ No release date is announced.
 This is the public companion repository for The HALO PS2 Project. It contains only this public README, with embedded project screenshots.
 
 The development repository remains private. Source code, game assets, builds and confidential development documents are not published here.
+
+## Contact
+
+For questions about The HALO PS2 Project, contact [acidreach@gmail.com](mailto:acidreach@gmail.com).
 
 ## Acknowledgements
 
