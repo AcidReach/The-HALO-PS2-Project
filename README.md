@@ -50,7 +50,7 @@ Achieving these goals requires a custom engine and content pipeline built around
 Current development includes:
 
 - **PS2-focused rendering:** geometry processing and rendering work distributed across the Emotion Engine, Vector Units and Graphics Synthesizer.
-- **GS recipes for Xbox shader effects:** using Graphics Synthesizer (GS) rendering “recipes”—combinations of rendering passes—to reproduce effects originally produced by Halo’s Xbox shaders as accurately as possible on PS2.
+- **GS Recipe System:** A PS2-native rendering framework that translates Halo's original Xbox shaders and material effects into optimised sequences of Graphics Synthesizer (GS) passes, known as *recipes*. Where direct recreation is impractical or too expensive, alternative PS2-native effects are designed to preserve the original visual appearance while respecting the console's hardware and performance limitations.
 - **Content preparation:** offline processing of meshes, textures, materials, scenes and animation data for PS2 runtime use.
 - **Visibility and memory management:** scene visibility, geometry culling and texture budgeting to use limited resources efficiently.
 
