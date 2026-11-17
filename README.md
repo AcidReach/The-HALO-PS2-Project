@@ -92,6 +92,8 @@ The research combines subpixel sampling, selective edge treatment and GS blendin
 
 An early experimental antialiasing solution has produced encouraging static comparisons. **The difference is much more pronounced in motion**, where the improvement in edge stability and reduced shimmering is harder to convey in screenshots. This remains experimental work, not a final integrated or performance-accepted solution.
 
+[![Early aaGS experiment: AA off compared with Auto 36](images/aa-off-vs-auto-36.png)](images/aa-off-vs-auto-36.png)
+
 ### Visibility and Geometry Efficiency
 
 Halo's environments can contain far more geometry than needs to be drawn from any one viewpoint. The engine retains useful BSP spatial information and combines it with visibility filtering, frustum testing and other culling stages to reduce work before geometry reaches VU1.
