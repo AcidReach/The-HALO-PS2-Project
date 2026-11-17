@@ -78,17 +78,17 @@ Each texture is assessed individually for its most suitable PS2 conversion forma
 
 This allows memory and streaming bandwidth to be saved where the visual impact is small, leaving more resources available for textures where the original detail matters most. The guiding principle is measured, per-texture optimisation to maximise fidelity to the Xbox image.
 
-### lxGS — Advanced Lighting
+### (experimental) lxGS — Advanced Lighting
 
 **lxGS** explores how the PS2's GS and vector units can cooperate to produce lighting effects beyond conventional fixed-function expectations. The work includes per-pixel diffuse lighting, normal-map response, spotlights and flashlight illumination, with specular and material-dependent effects also under development.
 
 Rather than treating every lighting feature as another full scene render, the architecture investigates buffer reuse, lower-resolution lighting data and efficient multipass operations. A per-pixel diffuse flashlight has been demonstrated; extending its visual response while meeting performance targets remains active work.
 
-### aaGS — Antialiasing
+### (experimental) aaGS — Antialiasing
 
 **aaGS** is a family of PS2-oriented techniques intended to reduce jagged silhouettes, edge shimmer and crawling, particularly around the Halo menu's large, slowly moving ring.
 
-Rather than applying a conventional **full-screen antialiasing filter**, the experimental aaGS approach is **geometry-edge-based**. Geometry-derived edge information is used to identify visible polygon boundaries and silhouettes, so subpixel sampling and GS blending can be concentrated on the regions where jagged edges and crawling occur. **The rest of the image is left untouched, preserving sharp texture detail** instead of softening the entire screen.
+Rather than applying a conventional **full-screen antialiasing filter**, the experimental aaGS approach is **geometry-edge-based**. Geometry-derived edge mask information is used to identify visible polygon boundaries and silhouettes, so subpixel sampling and GS blending can be concentrated on the regions where jagged edges and crawling occur. **The rest of the image is left untouched, preserving sharp texture detail** instead of softening the entire screen.
 
 By restricting antialiasing work to the edges that actually need it, the approach aims to reduce unnecessary rendering cost while improving image stability. Visual quality and frame-time performance both have to meet the project's acceptance targets.
 
