@@ -57,7 +57,7 @@ The goal is to retain Halo's original environment and model geometry while makin
 
 Halo's Xbox shaders rely on capabilities that do not map directly to the PS2's fixed-function Graphics Synthesizer. The **GS Recipe System** approaches each shader or material as a sequence of carefully chosen GS rendering passes—a *recipe*—that reproduces its visual behaviour.
 
-Recipes can combine texture sampling, blending, depth tests and framebuffer operations. Where a direct recreation would be impractical or too expensive, the system explores a cheaper PS2-native representation designed to preserve the same visual impression. Every recipe must satisfy both visual and performance requirements before acceptance. The system is also being used to plan the recreation of Halo's distinctive UI and ring effects.
+Recipes can combine texture sampling, blending, depth tests and framebuffer operations. Where a direct recreation would be impractical or too expensive, the system explores a cheaper PS2-native representation designed to preserve the same visual impression. Every recipe must satisfy both visual and performance requirements before acceptance.
 
 ### Texture Fidelity and Optimisation
 
