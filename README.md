@@ -1,4 +1,4 @@
-# The HALO PS2 Project
+<h1><img src="images/project-title-logo.png" alt="The HALO PS2 Project logo" width="110" valign="middle"> The HALO PS2 Project</h1>
 
 **Fidelity over compromise.**
 
