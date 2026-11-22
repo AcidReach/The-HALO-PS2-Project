@@ -144,7 +144,9 @@ Current work concentrates on renderer and simulation performance, shader and UI 
 
 ## Development Progress by Level
 
-Expand a section to see the latest publicly documented development progress. These notes record demonstrated work and ongoing development, not level completion or release readiness.
+**Current development is heavily focused on engine and simulation optimisation.** This foundational work takes priority over progressing through individual levels. Once key performance, stability and engine milestones are reached, development across the campaign levels is expected to accelerate significantly.
+
+Expand a section to see the latest publicly documented level-specific progress. These notes record demonstrated work and ongoing development, not level completion or release readiness.
 
 <details>
 <summary><strong>UI — Menu</strong></summary>
