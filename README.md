@@ -142,6 +142,87 @@ Current work concentrates on renderer and simulation performance, shader and UI 
 
 **No release date has been announced.**
 
+## Development Progress by Level
+
+Expand a section to see the latest publicly documented development progress. These notes record demonstrated work and ongoing development, not level completion or release readiness.
+
+<details>
+<summary><strong>UI — Menu</strong></summary>
+
+**In development:** Menu presentation, navigation, visual effects and the transition into gameplay. The interface continues to be refined; no completion milestone is claimed.
+
+</details>
+
+<details>
+<summary><strong>A10 — The Pillar of Autumn</strong></summary>
+
+**Demonstrated:** Native PS2 scene rendering and an experimental per-pixel flashlight test. **Ongoing:** Visual fidelity and performance optimisation.
+
+</details>
+
+<details>
+<summary><strong>A30 — Halo</strong></summary>
+
+No level-specific public progress update has been published yet.
+
+</details>
+
+<details>
+<summary><strong>A50 — Truth and Reconciliation</strong></summary>
+
+No level-specific public progress update has been published yet.
+
+</details>
+
+<details>
+<summary><strong>B30 — The Silent Cartographer</strong></summary>
+
+**Demonstrated:** Early Pelican flyover and landing scenes, alongside performance-profiling captures. **Ongoing:** Rendering and frame-time optimisation.
+
+</details>
+
+<details>
+<summary><strong>B40 — Assault on the Control Room</strong></summary>
+
+No level-specific public progress update has been published yet.
+
+</details>
+
+<details>
+<summary><strong>C10 — 343 Guilty Spark</strong></summary>
+
+No level-specific public progress update has been published yet.
+
+</details>
+
+<details>
+<summary><strong>C20 — The Library</strong></summary>
+
+No level-specific public progress update has been published yet.
+
+</details>
+
+<details>
+<summary><strong>C40 — Two Betrayals</strong></summary>
+
+No level-specific public progress update has been published yet.
+
+</details>
+
+<details>
+<summary><strong>D20 — Keyes</strong></summary>
+
+No level-specific public progress update has been published yet.
+
+</details>
+
+<details>
+<summary><strong>D40 — The Maw</strong></summary>
+
+No level-specific public progress update has been published yet.
+
+</details>
+
 ## How AI Is Used in This Project
 
 The HALO PS2 Project is a **human-architected engineering project developed in collaboration with agentic AI tools**.
