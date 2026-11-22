@@ -282,4 +282,6 @@ For questions about The HALO PS2 Project, contact [acidreach@gmail.com](mailto:a
 
 ## Acknowledgements
 
+Special thanks to the contributors to the Halo: Combat Evolved decompilation projects, including [punpckhdq/halo](https://github.com/punpckhdq/halo) and [bnunu/halo-1](https://github.com/bnunu/halo-1), for their work reconstructing and documenting the original Xbox game. Their efforts make projects like this possible.
+
 Halo and PlayStation are trademarks of their respective owners. This is an independent fan project, unaffiliated with Microsoft, Xbox, Bungie, Halo Studios or Sony Interactive Entertainment.
